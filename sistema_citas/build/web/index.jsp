@@ -18,7 +18,12 @@
     <body>
         <h1>Citas Control Escolar</h1>
         <div id="container">
+            <button type="button" >Day</button>
+            <button type="button" >Week</button>
+            <button type="button" >Month</button>
             <div id="dp"></div>
+            <button type="button" ><</button>
+            <button type="button" >></button>
             <script>
                 var db = new DayPilot.Month("dp");
                 var f = new Date();
