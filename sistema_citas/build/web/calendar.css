@@ -1,0 +1,16 @@
+
+/* 
+    Created on : Nov 17, 2016, 2:08:06 PM
+    Author     : JulioConchas <conchasjimenez@gmail.com>
+    Copyright  : JC. of CP.
+*/
+body{
+    margin:0px;
+    background-color: #908B8B;
+}
+#container{
+    margin-top: 50px;
+    margin-left: 300px;
+    width:76%;
+    background-color: #FFFFFF;
+}
