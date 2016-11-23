@@ -3,8 +3,14 @@
     Author     : JulioConchas <conchasjimenez@gmail.com>
     Copyright  : JC. of CP.
 */
-window.onload = function(){
-       
-};
+$(document).ready(function(){
+    
+    // page is now ready, initialize the calendar...
+    
+    $('#container').fullCalendar({
+         // put your options and callbacks here
+    });
+});
+            
 
 

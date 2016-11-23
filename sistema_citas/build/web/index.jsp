@@ -11,26 +11,83 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Citas ITSZapopan</title>
-        <script type="text/javascript" src="daypilot-all.min.js" charset="utf-8"></script> 
-        <script type="text/javascript" src="calendar.js" charset="utf-8"></script>
-        <link rel="stylesheet" type="text/css" href="calendar.css"/>
+        <link rel='stylesheet' href='fullcalendar/fullcalendar.css' />
+        <link rel='stylesheet' href='calendar.css' />
+        <script src='lib/jquery.min.js'></script>
+        <script src='lib/moment.min.js'></script>
+        <script src='fullcalendar/fullcalendar.js'></script>
+        
+         <script>
+            $(document).ready(function(){
+                
+                //getting the date
+                    var date = new Date();
+                    var date_write = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
+                // page is now ready, initialize the calendar...
+                
+                 $('#container').fullCalendar({
+                        header:{
+                          left: 'prev,next today',
+                          center: 'title',
+                          right: 'month,agendaWeek,agendaDay'
+                        },
+                        defaultDate: date_write,
+                        defaultView: 'basicWeek',
+                        editable: true,
+                        events: [
+                            {
+                              title: 'All Day Event',
+                              start: '2016-11-22'
+                            },
+                            {
+					title: 'Long Event',
+					start: '2014-06-07',
+					end: '2016-11-10'
+				},
+				{
+					id: 999,
+					title: 'Repeating Event',
+					start: '2016-11-09T16:00:00'
+				},
+				{
+					id: 999,
+					title: 'Repeating Event',
+					start: '2016-11-16T16:00:00'
+				},
+				{
+					title: 'Meeting',
+					start: '2016-11-12T10:30:00',
+					end: '2016-11-12T12:30:00'
+				},
+				{
+					title: 'Lunch',
+					start: '2016-11-12T12:00:00'
+				},
+				{
+					title: 'Birthday Party',
+					start: '2016-11-13T07:00:00'
+				},
+				{
+					title: 'Click for Google',
+					url: 'http://google.com/',
+					start: '2016-11-28'
+				}
+                        ],
+                        // methods
+                  
+                        dayClick: function(){
+                                $('#calendar').fullCalendar( 'changeView', 'agendaDay');
+                                alert("day clicked");
+                        }
+                  });
+                  
+            });
+           
+        </script>
+        
     </head>
     <body>
         <h1>Citas Control Escolar</h1>
-        <div id="container">
-            <button type="button" >Day</button>
-            <button type="button" >Week</button>
-            <button type="button" >Month</button>
-            <div id="dp"></div>
-            <button type="button" ><</button>
-            <button type="button" >></button>
-            <script>
-                var db = new DayPilot.Month("dp");
-                var f = new Date();
-                var date = f.getFullYear() + "-" + (f.getMonth() + 1) + "-" + f.getDate();
-                db.startDate = date;
-                db.init();
-            </script> 
-        </div>
+        <div id="container"></div>
     </body>
 </html>
