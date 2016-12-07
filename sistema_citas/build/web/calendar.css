@@ -4,9 +4,53 @@
     Author     : JulioConchas <conchasjimenez@gmail.com>
     Copyright  : JC. of CP.
 */
-body{
-    margin:0px;
-    background-color: #908B8B;
+.modal_view{
+    background-color:rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100vh;
+    top:0;
+    left:0;
+    position: absolute;
+    z-index: 2000;
+    display: flex;
+}
+.contenido{
+    margin: auto;
+    width: 30%;
+    height: 55%;
+    background: white;
+    border-radius: 20px;
+    dispay: flex;
+}
+form{
+    width: 100%;
+    height: 100%;
+    border: 1px solid #4e4d4d;
+    border-radius: 20px;
+}
+form h2 {
+    text-align:center;
+    margin:20px;
+}
+form h3{
+    margin-top: -5px;
+    margin-left:  15%;
+}
+form input{
+    width: 70%;
+    //height: 35px;
+    //padding: 0px 10px;
+    margin-left: 15%;
+    margin-bottom: 10px;
+    text-align:center;
+}
+form select{ 
+    margin-bottom: 10px;
+    margin-left:  15%;
+}
+form button{ 
+    margin-top: 10px;
+    margin-left: 50%;
 }
 #container{
     margin-top: 50px;
